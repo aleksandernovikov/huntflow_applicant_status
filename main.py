@@ -14,7 +14,7 @@ NEW_STATUS_ID: int = os.environ.get('NEW_STATUS_ID', 113243)
 
 headers = {
     'Authorization': f'Bearer {TOKEN}',
-    'User-Agent': 'LDSO_APP (developer@ldso.ru)',
+    'User-Agent': 'LDSO_APP (developer@ldso.ru)'
 }
 
 
@@ -28,7 +28,7 @@ def set_applicant_status(applicant_id: int, vacancy_id: int, to_status_id: int) 
     api_url = f'/account/{ACCOUNT_ID}/applicants/{applicant_id}/vacancy'
     url = urljoin(BASE_API_URL, api_url)
 
-    response = requests.put(url, data=payload, headers=headers)
+    response = requests.put(url, json=payload, headers=headers)
     return response.json()
 
 
