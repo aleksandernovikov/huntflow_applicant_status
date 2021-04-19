@@ -22,7 +22,8 @@ def set_applicant_status(applicant_id: int, vacancy_id: int, to_status_id: int) 
     """Установим этап для кандидата"""
     payload = {
         "vacancy": vacancy_id,
-        "status": to_status_id
+        "status": to_status_id,
+        "comment": "Результат тестирования: 100% Просмотр результатов https://yandex.ru"
     }
 
     api_url = f'/account/{ACCOUNT_ID}/applicants/{applicant_id}/vacancy'
